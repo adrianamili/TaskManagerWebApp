@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+  jpa:
+    open-in-view: false
+
+logging:
+  level:
+    com.taskmanager: INFO
+  file:
+    name: logs/taskmanager.log

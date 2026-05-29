@@ -1,0 +1,15 @@
+package com.taskmanager.repository;
+
+import com.taskmanager.model.Tag;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.Optional;
+
+@Repository
+public interface TagRepository extends JpaRepository<Tag, Long> {
+    Optional<Tag> findByName(String name);
+    boolean existsByName(String name);
+    Page<Tag> findAll(Pageable pageable);
+}
